@@ -1,13 +1,32 @@
 using TaskManagerAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Mvc; // <-- Add this for ApiBehaviorOptions
+using dotenv.net; // For loading environment variables
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
+// Load environment variables from .env file
+DotEnv.Load();
 
-// Register controllers and fix circular reference serialization
+// Build the database connection string using environment variables
+var dbHost = Environment.GetEnvironmentVariable("DB_HOST");
+var dbPort = Environment.GetEnvironmentVariable("DB_PORT");
+var dbName = Environment.GetEnvironmentVariable("DB_NAME");
+var dbUser = Environment.GetEnvironmentVariable("DB_USER");
+var dbPassword = Environment.GetEnvironmentVariable("DB_PASSWORD");
+
+if (string.IsNullOrEmpty(dbHost) || string.IsNullOrEmpty(dbName) || string.IsNullOrEmpty(dbUser) || string.IsNullOrEmpty(dbPassword))
+{
+    throw new InvalidOperationException("Database environment variables are missing. Check your .env file.");
+}
+
+var connectionString = $"Host={dbHost};Port={dbPort};Database={dbName};Username={dbUser};Password={dbPassword}";
+
+// Inject the connection string into configuration
+builder.Configuration["ConnectionStrings:DefaultConnection"] = connectionString;
+
+// Register services
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -40,14 +59,13 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register DbContext with PostgreSQL
+// Register AppDbContext with PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
-
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -56,9 +74,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

@@ -140,3 +140,5 @@ D:\Code\Project\TaskManagerAPI\obj\Debug\net9.0\refint\TaskManagerAPI.dll
 D:\Code\Project\TaskManagerAPI\obj\Debug\net9.0\TaskManagerAPI.pdb
 D:\Code\Project\TaskManagerAPI\obj\Debug\net9.0\TaskManagerAPI.genruntimeconfig.cache
 D:\Code\Project\TaskManagerAPI\obj\Debug\net9.0\ref\TaskManagerAPI.dll
+D:\Code\Project\TaskManagerAPI\obj\Debug\net9.0\TaskManagerAPI.sourcelink.json
+D:\Code\Project\TaskManagerAPI\bin\Debug\net9.0\dotenv.net.dll

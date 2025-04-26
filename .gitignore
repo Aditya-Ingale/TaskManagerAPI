@@ -1,26 +1,27 @@
-# .NET Core
+# Ignore build folders
 bin/
 obj/
 
-# User-specific files
-.idea/
-.vscode/
-
-# Configuration files
-appsettings.Development.json
+# Ignore app settings containing secrets
 appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+appsettings.Local.json
 
-# Build directories
-*.vs
-.vscode
-.vsconfig
+# Ignore environment files
+.env
 
-# Ignore user-specific and system files
-.DS_Store
-Thumbs.db
-
-# Other ignored files
+# Ignore IDE settings
+.vscode/
+.idea/
+*.suo
 *.user
 *.userosscache
-*.suo
 *.sln.docstates
+.vs/
+
+# Ignore log/temp files
+*.log
+*.tmp
+*.bak
