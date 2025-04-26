@@ -1,6 +1,6 @@
 # TaskManagerAPI
 
-A simple and powerful **Task Management REST API** built with **ASP.NET Core** and **PostgreSQL**.  
+A simple and powerful **Task Management REST API** built with ![.NET](https://img.shields.io/badge/.NET-8.0-blueviolet?logo=dotnet&logoColor=white) and ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql&logoColor=white).  
 Manage your tasks and users with full **CRUD operations**, proper **validation**, and **error handling**.
 
 ---
@@ -88,5 +88,5 @@ TaskManagerAPI/
 └── .gitignore
 ```
 
-### License
+### License ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 This project is licensed under the MIT License — feel free to use it for your own projects!
