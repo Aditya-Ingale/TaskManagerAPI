@@ -1,27 +1,49 @@
-# Ignore build folders
+# === Build directories ===
 bin/
 obj/
+artifacts/
 
-# Ignore app settings containing secrets
+# === User-specific IDE files ===
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.csproj.user
+
+# === ASP.NET Core settings ===
 appsettings.json
 appsettings.Development.json
 appsettings.Production.json
 appsettings.Staging.json
 appsettings.Local.json
 
-# Ignore environment files
+# === Secret Environment Files ===
 .env
 
-# Ignore IDE settings
-.vscode/
-.idea/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-.vs/
-
-# Ignore log/temp files
+# === Log files ===
 *.log
+
+# === Database files ===
+*.dbmdl
+
+# === Debug/Release folders ===
+Debug/
+Release/
+
+# === Temporary files ===
 *.tmp
 *.bak
+*.swp
+*.swo
+
+# === Windows/Mac OS generated files ===
+Thumbs.db
+.DS_Store
+
+# === Node.js ===
+node_modules/
+
+# === Rider (JetBrains IDE) ===
+.idea/
