@@ -1,0 +1,26 @@
+# .NET Core
+bin/
+obj/
+
+# User-specific files
+.idea/
+.vscode/
+
+# Configuration files
+appsettings.Development.json
+appsettings.json
+
+# Build directories
+*.vs
+.vscode
+.vsconfig
+
+# Ignore user-specific and system files
+.DS_Store
+Thumbs.db
+
+# Other ignored files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
