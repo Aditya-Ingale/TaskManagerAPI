@@ -65,13 +65,14 @@ dotnet run
 - https://localhost:5001/swagger — to explore your API with Swagger UI!
 
 ### API Endpoints Overview
-HTTP Method | Endpoint | Description
-GET | /api/tasks | Get all tasks
-GET | /api/tasks/{id} | Get a specific task
-POST | /api/tasks | Create a new task
-PUT | /api/tasks/{id} | Update a task
-DELETE | /api/tasks/{id} | Delete a task
-... | ... | (More endpoints for Users)
+| HTTP Method | Endpoint | Description |
+| --- | --- | --- |
+| GET | /api/tasks | Get all tasks |
+| GET | /api/tasks/{id} | Get a specific task |
+| POST | /api/tasks | Create a new task |
+| PUT | /api/tasks/{id} | Update a task |
+| DELETE | /api/tasks/{id} | Delete a task |
+| ... | ... | (More endpoints for Users) |
 
 ### Folder structure
 ```bash
